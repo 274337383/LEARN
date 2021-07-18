@@ -28,6 +28,10 @@ public class HelloWorld {
         //java语句[java语句以";"终止，分号必须是半角分号]
         System.out.println("Hello World!");
 
+        System.out.println("Hello Sun!");
+
+        System.out.println("你好,世界!");
+
     }
 
 }
