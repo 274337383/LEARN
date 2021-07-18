@@ -4,6 +4,11 @@ package com.fish.java;
 // HelloWorld表示一个类名
 public class HelloWorld {
 
+    //类体中不允许直接编写java语句【除声明变量以外】
+    // System.out.println("Hello World!");
+
+    //类体【记住】
+
     /*
         public表示公开的
         static表示静态的
