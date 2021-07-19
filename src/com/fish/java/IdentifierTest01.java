@@ -34,9 +34,23 @@ public class IdentifierTest01 { //IdentifierTest01是一个类名，名字可以
         * 变量名、方法名:首字母小写，后面每个单词首字母大写.
 
         * 常量名:全部大写.
+    4,合法和不合法的标识符
+        合法  不合法
+    ------------------------
+    _123Test    123Tset
+                HelloWorld!
+    A_B_C       HelloWorld#
+    $ABC        Hello World
+    class1      class
+    public0     public
 */
     //main是一个方法名
     public static void main(String[] args) {    // args是一个变量名
         System.out.println("Hello World!");
+        dosome();
+    }
+    public static void dosome() {
+        int i = 10;
+        System.out.println(i);
     }
 }
