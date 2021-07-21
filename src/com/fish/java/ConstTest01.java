@@ -25,7 +25,7 @@ public class ConstTest01 {
 
         System.out.println("你好吗");
 
-        System.out.println(10);
+        System.out.println(100);
 
         System.out.println(100);
 
