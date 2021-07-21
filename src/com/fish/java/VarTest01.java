@@ -46,6 +46,20 @@ package com.fish.java;
             i = 30;
             System.out.println(i);  //结果为30
 
+        8.有了变量的概念之后, 内存空间得到了重复的使用.
+            int i =10;
+            System.out.println(i);
+            ...
+            ...
+            System.out.println(i);
+        9.通常访问一个变量包括两种访问形式:
+            * 第一种,读取变量中保存的具体数据 get/获取
+            * 第二种,修改变量中保存的具体数据 set/设置
+            
+            i = 20; //set
+
+            System.out.println(i);  //get
+            
 */
 public class VarTest01 {
 }
