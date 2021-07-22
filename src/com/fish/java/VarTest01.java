@@ -59,7 +59,19 @@ package com.fish.java;
             i = 20; //set
 
             System.out.println(i);  //get
-            
+
+        10.变量在一行上可以定义多个
+            int a,b,c;
+        11.java中的变量必须先声明,再赋值,才能访问
+            int i; 程序执行到这里,内存空间并没有开辟出来,变量i并没有初始化。所以没有赋值前是无法访问的。
+
 */
 public class VarTest01 {
+    public static void main(String[] args) {
+        //声明一个int类型的变量,起名i
+        int i;
+        //编译报错:变量i并没有初始化
+        //System.out.println(i);    //error:java: 可能尚未初始化变量i
+
+    }
 }
