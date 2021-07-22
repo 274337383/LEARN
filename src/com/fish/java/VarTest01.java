@@ -72,6 +72,7 @@ public class VarTest01 {
         int i;
         //编译报错:变量i并没有初始化
         //System.out.println(i);    //error:java: 可能尚未初始化变量i
-
+        i = 100;
+        System.out.println(i);
     }
 }
