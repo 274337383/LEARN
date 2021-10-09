@@ -46,7 +46,5 @@ public class print {
     public static void outln(char a) {
         System.out.println(a);
     }
-    public static void outln(String a) {
-        System.out.println(a);
-    }
+    public static void outln(String a) {System.out.println(a);}
 }
