@@ -2,12 +2,14 @@ package com.fish.java;
 
 public class Main {
     public static void main(String[] args) {
-        Main.SumInt(34, 76);
-        print.outln("HelloWorld!");
-    }
+        Person person = new Person();
 
-    public static void SumInt(int a, int b) {
-        int c = a + b;
-        System.out.println(c);
+        person.name = "Mike";
+        person.house = new House();
+        person.house.area = 300.6;
+        person.house.address = new Address();
+        person.house.address.Address = "China";
+
+
     }
 }

@@ -4,7 +4,7 @@ public class test1 {
     static String b = "Begin", o = "Over";
     public static void main(String[] args) {
         long  a = Input.long_input("请输入一个数:");
-        print.outln(sum(a));
+        Print.outln(sum(a));
     }
 
     public static long sum(long n) {

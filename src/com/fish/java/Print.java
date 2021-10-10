@@ -1,6 +1,6 @@
 package com.fish.java;
 
-public class print {
+public class Print {
     public static void out(byte a) {
         System.out.print(a);
     }
