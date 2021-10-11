@@ -7,9 +7,8 @@ public class Main {
         person.name = "Mike";
         person.house = new House();
         person.house.area = 300.6;
-        person.house.address = new Address();
-        person.house.address.Address = "China";
+        person.house.address = "China";
 
-
+        Print.out(person.name+" live in "+person.house.address);
     }
 }
