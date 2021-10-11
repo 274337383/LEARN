@@ -1,6 +1,7 @@
 package com.product.java;
 
 public class Print {
+    public static void outln() { System.out.println(); }
     public static void out(byte a) {
         System.out.print(a);
     }
