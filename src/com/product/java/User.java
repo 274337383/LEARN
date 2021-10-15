@@ -1,22 +1,27 @@
 package com.product.java;
 
 public class User {
-        public User() {
-            Print.outln("User's Default Constructor Invoke!");
-        }
+    public User(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-        public User(String name) {
-            Print.outln(name);
-        }
+    public String getName() {
+        return name;
+    }
 
-        public User(int num) {
-            int k = 0;
-            for (int i = 1; i <= 9; i++) {
-                for (int j = 1; j <= i; j++) {
-                    k = i * j;
-                    Print.out(i+"*"+j+"="+k+" ");
-                }
-                Print.outln();
-            }
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    private int id;
+    private String name;
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
