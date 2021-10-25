@@ -18,4 +18,9 @@ package com.test1.java;
  *          private < 缺省 < protected < public
  */
 public class Main {
+    public static void main(String[] args) {
+        User u = new User();
+        System.out.println(u.i);
+        System.out.println(u.j);
+    }
 }

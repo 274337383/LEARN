@@ -6,4 +6,9 @@ public class User {
 
     // 缺省的
     int j = 20;
+
+    public void m1() {}
+    private void m2() {}
+    protected void m3() {}
+    void m4() {}
 }
