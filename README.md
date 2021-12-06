@@ -1,2 +1,2 @@
 # LEARN
-First_java_program
+Java学习笔记(随便记记的)
