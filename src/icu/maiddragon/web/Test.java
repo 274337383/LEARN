@@ -4,7 +4,7 @@ import icu.maiddragon.stack.ArrayStack;
 
 public class Test {
     public static void main(String[] args) {
-        String a = "3+4";
+        String a = "4*5";
 
         ArrayStack numStack = new ArrayStack(10);
         ArrayStack symbolStack = new ArrayStack(10);
