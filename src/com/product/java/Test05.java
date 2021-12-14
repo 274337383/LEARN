@@ -15,7 +15,6 @@ public class Test05 {
         o3.setName("李四");
         o3.setAddress(new Address("深圳", "xxx", "46000"));
         System.out.println("修改后:"+user.toString()+"\n"+o3.toString());
-
     }
 }
 

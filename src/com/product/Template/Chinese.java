@@ -1,9 +1,9 @@
 package com.product.Template;
 
 public class Chinese extends User{
-    private int id;
+    private final int id;
     private String name;
-    private String country;
+    private final String country;
 
     public Chinese(int id, String name) {
         super(id, name);
