@@ -1,86 +1,50 @@
 package icu.maiddragon.web;
 
-import icu.maiddragon.stack.ArrayStack;
+import java.sql.*;
 
 public class Test {
     public static void main(String[] args) {
-        String a = "4*5";
+        Connection conn = null;
+        Statement stmt = null;
 
-        ArrayStack numStack = new ArrayStack(10);
-        ArrayStack symbolStack = new ArrayStack(10);
+        try {
+            // 1.注册驱动
+            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 
-        int temp1 = 0;
-        int temp2 = 0;
-        int symbolChar = 0;
-        int result = 0;
-        StringBuilder values = new StringBuilder();
+            // 2.获取连接
+            String url = "jdbc:mysql://maiddragon.icu:3306/test";
+            String user = "root";
+            String password = "Acceleator2018";
+            conn = DriverManager.getConnection(url, user, password);
+            System.out.println("数据库连接对象:"+conn);
 
-        for (int i = 0; i < a.length(); i++) {
-            char c = a.charAt(i);
-            if (symbolStack.isOper(c)) {
-                if (!symbolStack.isEmpty()) {
-                    if (symbolStack.priority(c) <= symbolStack.priority(symbolStack.peek())) {
-                        temp1 = numStack.pop();
-                        temp2 = numStack.pop();
-                        symbolChar = symbolStack.pop();
-                        symbolStack.calculate(temp1, temp2, symbolChar);
-
-                        // 数字栈将结果推进栈中
-                        numStack.push(result);
-                        // 符号栈将运算符推入栈中
-                        symbolStack.push(c);
-                    }
-                } else {
-                    // 如果是空符号栈，将运算符推入栈中
-                    symbolStack.push(c);
-            }
-        } else {
-                values.append(c);
-
-                if (i == a.length()-1) {
-                    numStack.push(Integer.parseInt(values.toString()));
-                } else {
-                    char data = a.substring(i+1, i+2).charAt(0);
-                    if (symbolStack.isOper(data)) {
-                        numStack.push(Integer.parseInt(values.toString()));
-                        values = new StringBuilder();
-                    }
+            // 3.获取数据库连接对象
+            stmt = conn.createStatement();
+//            int count = stmt.executeUpdate("INSERT INTO test.user(username, password, address) VALUES('林凯民',MD5('123456.88'),'漳州市漳浦县')");
+            int count = stmt.executeUpdate("UPDATE test.user SET address='漳州市漳浦县' WHERE username='林凯民'");
+            System.out.println(count == 1 ? "保存成功":"保存失败");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // 6.释放资源
+            // 为了保证资源一定释放,在finally语句块中关闭资源
+            // 并且要遵循从小到大依次关闭
+            // 分别对其try{catch{}}
+            try {
+                if (stmt!=null) {
+                    stmt.close();
                 }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                if (conn!=null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
-        while (!symbolStack.isEmpty()) {
-
-            temp1 = numStack.pop();
-            temp2 = numStack.pop();
-
-            symbolChar = symbolStack.pop();
-
-            result = numStack.calculate(temp1, temp2, symbolChar);
-
-            numStack.push(result);
-        }
-
-        int res = numStack.pop();
-
-        System.out.println("结果是:" + res);
-    }
-
-    public static boolean detection(String val) {
-        ArrayStack stack = new ArrayStack(val.length());
-
-        for (int i = 0; i < val.length(); i++) {
-            stack.push(val.charAt(i));
-        }
-
-        String newVal = "";
-        int length1 = stack.length();
-        for (int i = 0; i < length1; i++) {
-            if (!stack.isEmpty()) {
-                char pop = (char) stack.pop();
-                newVal = newVal + pop;
-            }
-        }
-
-        return val.equals(newVal);
     }
 }
